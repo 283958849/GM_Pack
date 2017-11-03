@@ -9,4 +9,4 @@ Eclipse Menu → Window → Preferences → C/C++ → Packages → Repositories 
 
 type: CMSIS Pack
 name: GM66XX Packs
-url : https://github.com/283958849/GM_Pack/raw/master/index.idx
+url : https://github.com/283958849/GM_Pack/blob/master/index.pidx
