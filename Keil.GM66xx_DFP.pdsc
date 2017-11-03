@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Keil</vendor>
+  <!--url>http://www.keil.com/pack/</url-->
+  <name>GM66xx_DFP</name>
+  <description>Gree Microelectronics GM66 Series Device Support</description>
+
+  <releases>
+    <release version="1.0.0" date="2016-11-01">
+     First release version of GM66 Device Family Pack
+    </release>
+    <release version="1.1.0" date="2017-03-23">
+     Add GM6611 to GM66 Device Family Pack
+    </release>
+    <release version="1.2.0" date="2017-06-02">
+     Add GM6601B to GM66 Device Family Pack
+    </release>
+    <release version="1.2.1" date="2017-06-12">
+     Add CAN module description to GM6611
+    </release>
+    <release version="1.2.2" date="2017-06-16">
+     Use new Keil tool.
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>Gree</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package GreeMicroelectronics</keyword>
+    <keyword>GM66</keyword>
+  </keywords>
+
+  <devices>
+    <family Dfamily="GM66 Series" Dvendor="GreeMicroelectronics:193">
+      <processor Dcore="Cortex-M0" DcoreVersion="r0p0_03rel2" Dfpu="0" Dmpu="0" Dendian="Little-endian"/>
+      <book name="Docs\DUI0497A_cortex_m0_r0p0_generic_ug.pdf" title="Cortex-M0 Devices Generic User Guide"/>
+      <description>        	
+GreeMicroelectronics' GM66 series chipsets provide replacement of 8 bit mcu with high performance and high ESD/EFT electrical characteristics.
+      </description>
+
+      <!-- ************************  Subfamily 'GM6601'  **************************** -->
+      <subFamily DsubFamily="GM6601">
+        <processor Dclock="48000000"/>
+        <compile header="Device\Include\GM6601_Generate.h" define="CHIP_GM6601"/>
+        <debug svd="SVD\GM6601.svd"/>
+        <book name="Docs\Gree_GM6601_Reference_Manual.pdf" title="GREE GM6601 Microcontroller Reference Manual"/>
+        <!--book name="Documents\DM00088500.pdf" title="GM6601 Data Sheet"/-->
+        
+        <!-- *************************  Device 'GM6601LQFP44'  ***************************** -->
+        <device Dname="GM6601ALQFP44">
+          <memory     id="IROM1"                      start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"                      start="0x20000000"  size="0x1000"      init   ="0"   default="1"/>
+          <algorithm  name="Flash\GM6601xxx_P64KB.FLM"     start="0x00000000"  size="0x10000"              default="1"/>
+          <feature type="QFP"           n="44"/>
+          <feature type="ADC"           n="1"       m="12"/>
+          <!--feature type="ACMP"			n="1"/-->
+          <feature type="Timer"         n="6"       m="16"/>
+          <feature type="IOs"           n="40"/>
+          <feature type="SPI"           n="1"/>
+          <feature type="I2C"           n="1"/>
+          <feature type="USART"         n="2"/>
+          <feature type="WDT"           n="1"/>
+          <feature type="RTC"           n="32768"/>
+          <!--feature type="CRC"           n="1"/-->
+          <feature type="DMA"           n="1"/>
+          <!--feature type="HIRX"			n="1"/-->
+          <feature type="VCC"           n="2.70"    m="5.50"/>
+          <feature type="Temp"          n="-40"     m="85"/>
+        </device>
+        
+		<!-- *************************  Device 'GM6601LQFP64'  ***************************** -->
+        <device Dname="GM6601ALQFP64">
+          <memory     id="IROM1"                      start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"                      start="0x20000000"  size="0x1000"      init   ="0"   default="1"/>
+          <algorithm  name="Flash\GM6601xxx_P64KB.FLM"     start="0x00000000"  size="0x10000"              default="1"/>
+          <feature type="QFP"           n="64"/>
+          <feature type="ADC"           n="1"       m="12"/>
+          <!--feature type="ACMP"			n="1"/-->
+          <feature type="Timer"         n="6"       m="16"/>
+          <feature type="IOs"           n="57"/>
+          <feature type="SPI"           n="1"/>
+          <feature type="I2C"           n="3"/>
+          <feature type="USART"         n="3"/>
+          <feature type="WDT"           n="1"/>
+          <feature type="RTC"           n="32768"/>
+          <!--feature type="CRC"           n="1"/-->
+          <feature type="DMA"           n="1"/>
+          <!--feature type="HIRX"			n="1"/-->
+          <feature type="VCC"           n="2.70"    m="5.50"/>
+          <feature type="Temp"          n="-40"     m="85"/>
+        </device>
+      </subFamily>
+      
+      <!-- ************************  Subfamily 'GM6611'  **************************** -->
+      <subFamily DsubFamily="GM6611">
+        <processor Dclock="48000000"/>
+        <compile header="Device\Include\GM6611_Generate.h" define="CHIP_GM6611"/>
+        <debug svd="SVD\GM6611.svd"/>
+        <book name="Docs\Gree_GM6611_Reference_Manual.pdf" title="GREE GM6611 Microcontroller Reference Manual"/>
+        <!--book name="Documents\DM00088500.pdf" title="GM6601 Data Sheet"/-->
+        
+		<!-- *************************  Device 'GM6611LQFP100'  ***************************** -->
+        <device Dname="GM6611LQFP100">
+          <memory     id="IROM1"                      start="0x00000000"  size="0x40000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"      init   ="0"   default="1"/>
+          <algorithm  name="Flash\GM6611xxx_P256KB.FLM"     start="0x00000000"  size="0x40000"             default="1"/>
+          <feature type="QFP"           n="100"/>
+          <feature type="ADC"           n="1"       m="12"/>
+          <!--feature type="ACMP"			n="1"/-->
+          <feature type="Timer"         n="4"       m="16"/>
+          <feature type="IOs"           n="80"/>
+          <feature type="SPI"           n="1"/>
+          <feature type="I2C"           n="3"/>
+          <feature type="USART"         n="3"/>
+          <feature type="WDT"           n="1"/>
+          <feature type="RTC"           n="32768"/>
+          <!--feature type="CRC"           n="1"/-->
+          <feature type="DMA"           n="1"/>
+          <!--feature type="HIRX"			n="1"/-->
+          <feature type="CAN"			n="1"/>
+          <feature type="LCD"			n="1"/>
+          <feature type="VCC"           n="2.70"    m="5.50"/>
+          <feature type="Temp"          n="-40"     m="85"/>
+        </device>
+      </subFamily>
+      
+      <!-- ************************  Subfamily 'GM6601B'  **************************** -->
+      <subFamily DsubFamily="GM6601B">
+        <processor Dclock="48000000"/>
+        <compile header="Device\Include\GM6601B_Generate.h" define="CHIP_GM6601B"/>
+        <debug svd="SVD\GM6601B.svd"/>
+        <book name="Docs\Gree_GM6601_Reference_Manual.pdf" title="GREE GM6601 Microcontroller Reference Manual"/>
+        <!--book name="Documents\DM00088500.pdf" title="GM6601B Data Sheet"/-->
+        
+        <!-- *************************  Device 'GM6601BLQFP44'  ***************************** -->
+        <device Dname="GM6601BLQFP44">
+          <memory     id="IROM1"                      start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"                      start="0x20000000"  size="0x1000"      init   ="0"   default="1"/>
+          <algorithm  name="Flash\GM6601xxx_P64KB.FLM"     start="0x00000000"  size="0x10000"              default="1"/>
+          <feature type="QFP"           n="44"/>
+          <feature type="ADC"           n="1"       m="12"/>
+          <!--feature type="ACMP"			n="1"/-->
+          <feature type="Timer"         n="6"       m="16"/>
+          <feature type="IOs"           n="40"/>
+          <feature type="SPI"           n="1"/>
+          <feature type="I2C"           n="1"/>
+          <feature type="USART"         n="2"/>
+          <feature type="WDT"           n="1"/>
+          <feature type="RTC"           n="32768"/>
+          <!--feature type="CRC"           n="1"/-->
+          <feature type="DMA"           n="1"/>
+          <!--feature type="HIRX"			n="1"/-->
+          <feature type="VCC"           n="2.70"    m="5.50"/>
+          <feature type="Temp"          n="-40"     m="85"/>
+        </device>
+        
+		<!-- *************************  Device 'GM6601BLQFP64'  ***************************** -->
+        <device Dname="GM6601BLQFP64">
+          <memory     id="IROM1"                      start="0x00000000"  size="0x10000"     startup="1"   default="1"/>
+          <memory     id="IRAM1"                      start="0x20000000"  size="0x1000"      init   ="0"   default="1"/>
+          <algorithm  name="Flash\GM6601xxx_P64KB.FLM"     start="0x00000000"  size="0x10000"              default="1"/>
+          <feature type="QFP"           n="64"/>
+          <feature type="ADC"           n="1"       m="12"/>
+          <!--feature type="ACMP"			n="1"/-->
+          <feature type="Timer"         n="6"       m="16"/>
+          <feature type="IOs"           n="57"/>
+          <feature type="SPI"           n="1"/>
+          <feature type="I2C"           n="3"/>
+          <feature type="USART"         n="3"/>
+          <feature type="WDT"           n="1"/>
+          <feature type="RTC"           n="32768"/>
+          <!--feature type="CRC"           n="1"/-->
+          <feature type="DMA"           n="1"/>
+          <!--feature type="HIRX"			n="1"/-->
+          <feature type="VCC"           n="2.70"    m="5.50"/>
+          <feature type="Temp"          n="-40"     m="85"/>
+        </device>
+      </subFamily>
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- Compiler Conditions -->
+    <condition id="Compiler ARMCC">
+      <require Tcompiler="ARMCC"/>
+    </condition>
+
+    <!-- Device + CMSIS Conditions -->
+    <condition id="GM6601A CMSIS">
+      <description>GreeMicroelectronics GM6601 Devices and CMSIS-Core</description>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+      <require Dvendor="GreeMicroelectronics:193" Dname="GM6601A*"/>
+    </condition>
+    <condition id="GM6611 CMSIS">
+      <description>GreeMicroelectronics GM6611 Devices and CMSIS-Core</description>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+      <require Dvendor="GreeMicroelectronics:193" Dname="GM6611*"/>
+    </condition>
+    <condition id="GM6601B CMSIS">
+      <description>GreeMicroelectronics GM6601B Devices and CMSIS-Core</description>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+      <require Dvendor="GreeMicroelectronics:193" Dname="GM6601B*"/>
+    </condition>
+  </conditions>
+
+  <components>
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="GM6601A CMSIS">
+      <description>System Startup for GreeMicroelectronics GM6601 Devices</description>
+      <files>
+        <file category="include"   name="Device\Include\"/>
+        <file category="source"    name="Device\Source\ARM\startup_gm6601.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+        <!--file category="source"    name="Device\Source\system_gm66xx.c"      attr="config" version="1.0.0"/-->
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="GM6611 CMSIS">
+      <description>System Startup for GreeMicroelectronics GM6611 Devices</description>
+      <files>
+        <file category="include"   name="Device\Include\"/>
+        <file category="source"    name="Device\Source\ARM\startup_gm6611.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+        <!--file category="source"    name="Device\Source\system_gm66xx.c"      attr="config" version="1.0.0"/-->
+      </files>
+    </component>
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="GM6601B CMSIS">
+      <description>System Startup for GreeMicroelectronics GM6601B Devices</description>
+      <files>
+        <file category="include"   name="Device\Include\"/>
+        <file category="source"    name="Device\Source\ARM\startup_gm6601b.s" attr="config" version="1.0.0" condition="Compiler ARMCC"/>
+        <!--file category="source"    name="Device\Source\system_gm66xx.c"      attr="config" version="1.0.0"/-->
+      </files>
+    </component>
+
+    <!-- GM6601 Demoboard Support -->
+    <!--bundle Cbundle="GM6601 Demo" Cclass="Board Support" Cversion="1.0.0">
+      <description>GreeMicroelectronics GM6601 Demo</description>
+      <doc></doc>
+      <component Cgroup="LED" condition="GM6601 CMSIS">
+      <description>LED driver for GreeMicroelectronics GM6601 Demoboard</description>
+        <files>
+          <file category="source" name="Boards\GreeMicroelectronics\GM6601-Demoboard\drv\gpio.c"/>
+        </files>
+      </component>
+    </bundle-->
+  </components>
+
+  <boards>
+	<board vendor="GreeMicroelectronics" name="GM6601A Demoboard" revision="1.0.0">
+      <description>GreeMicroelectronics GM6601A demo board</description>
+      <!--book category="overview"  name="http://www.gree.com/" title="GM6601 demoboard Web Page"/-->
+      <mountedDevice    deviceIndex="0" Dvendor="GreeMicroelectronics:193" Dname="GM6601ALQFP64"/>
+      <compatibleDevice deviceIndex="0" Dvendor="GreeMicroelectronics:193" DsubFamily="GM6601"/>
+      <feature type="XTAL"            n="8000000"/>
+      <feature type="PWR"             n="5"              name="Adapter power input"/>
+      <feature type="PWR"             n="5"              name="USB power input"/>
+      <!--feature type="UART"           n="1"/-->
+      <!--feature type="IR"              n="1"/-->
+      <!--feature type="ADC"             n="1"              name="16 channels input"/-->
+      <!--feature type="ACMP"            n="1"              name="Three channels input"/-->
+      <!--feature type="EEPROM"          n="1"              name="I2C EEPROM"/-->
+      <feature type="Button"          n="1"              name="Buttons for Reset"/>
+      <feature type="LED"             n="2"              name="LEDs directly connected to port pins"/>
+      <debugInterface adapter="SWD" connector="1*4 pin SWD (2.54 mm connector)"/>
+    </board>
+  </boards>
+  
+  <!--examples>
+    <example name="led_demo" doc="Abstract.txt" folder="Boards\GreeMicroelectronics\GM6601-Demoboard\led\build\keil">
+      <description>led example</description>
+      <board name="GM6601 Demoboard" vendor="GreeMicroelectronics"/>
+      <project>
+        <environment name="uv" load="led_demo.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+  </examples-->  
+  
+</package>
