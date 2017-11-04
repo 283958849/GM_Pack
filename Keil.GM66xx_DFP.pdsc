@@ -2,7 +2,7 @@
 
 <package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
   <vendor>Keil</vendor>
-  <!--url>http://www.keil.com/pack/</url-->
+  <url>http://www.keil.com/pack/</url>
   <name>GM66xx_DFP</name>
   <description>Gree Microelectronics GM66 Series Device Support</description>
 
