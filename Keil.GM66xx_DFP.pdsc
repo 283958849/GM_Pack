@@ -7,20 +7,20 @@
   <description>Gree Microelectronics GM66 Series Device Support</description>
 
   <releases>
-    <release version="1.0.0" date="2016-11-01">
-     First release version of GM66 Device Family Pack
-    </release>
-    <release version="1.1.0" date="2017-03-23">
-     Add GM6611 to GM66 Device Family Pack
-    </release>
-    <release version="1.2.0" date="2017-06-02">
-     Add GM6601B to GM66 Device Family Pack
+    <release version="1.2.2" date="2017-06-16">
+     Use new Keil tool.
     </release>
     <release version="1.2.1" date="2017-06-12">
      Add CAN module description to GM6611
     </release>
-    <release version="1.2.2" date="2017-06-16">
-     Use new Keil tool.
+    <release version="1.2.0" date="2017-06-02">
+     Add GM6601B to GM66 Device Family Pack
+    </release>
+    <release version="1.1.0" date="2017-03-23">
+     Add GM6611 to GM66 Device Family Pack
+    </release>
+    <release version="1.0.0" date="2016-11-01">
+     First release version of GM66 Device Family Pack
     </release>
   </releases>
 
